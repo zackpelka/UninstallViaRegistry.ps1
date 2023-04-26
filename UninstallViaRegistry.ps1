@@ -1,6 +1,6 @@
-# put programs to remove in this array. Java and Opera are in this example.
+# put programs to remove in this array. Java and Opera are in this example= $remove = @('*Java*', '*Opera*' )
 
-$remove = @('*Java*', '*Opera*' )
+$remove = @('*Dropbox*',)
 
 function Get-InstalledApps {
 param (
@@ -43,5 +43,5 @@ Get-InstalledApps | Where-Object {$_.DisplayName -like $r } | Select-Object -Exp
 }
 
 ForEach ($a in $array) {
-& "$env:ComSpec" /c $a /quiet
+& "$env:ComSpec" /c $a /S
 }
